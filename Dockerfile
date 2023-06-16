@@ -4,8 +4,8 @@ FROM nodejs:latest
 # Copy contents into image
 COPY . .
 
-# Install the requirements.txt
-RUN pip install -r requirements.txt
+# # Install the requirements.txt
+# RUN pip install -r requirements.txt
 
 # Install npm
 RUN npm install
