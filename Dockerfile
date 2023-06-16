@@ -1,17 +1,17 @@
 # Use Python 3.6 or later as a base image
-FROM python:latest
+FROM nodejs:latest
 
 # Copy contents into image
 COPY . .
 
-# Install pip dependencies from requirements
+# Install the requirements.txt
 RUN pip install -r requirements.txt
 
-# Set YOUR_NAME environment variable
-ENV YOUR_NAME Satta
+# Install npm
+RUN npm install
 
 # Expose the correct port
-EXPOSE 5500
+EXPOSE 5000
 
-# Create an entrypoint
-ENTRYPOINT ["python", "app.py"]
+# Open app
+ENTRYPOINT [ "npm", "start" ]
